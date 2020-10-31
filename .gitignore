@@ -1,0 +1,14 @@
+.dart_tool/
+.packages
+build/
+pubspec.lock
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Mac
+.DS_Store
+
+doc/api/
