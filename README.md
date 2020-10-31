@@ -1,5 +1,7 @@
 # Geocode library
 
+![workflow name](https://github.com/imvalient/geocode/workflows/Dart%20CI/badge.svg)
+
 ## Introduction
 
 Package to make Geocode requests. It exposes two methods to translate coordinates into locations and addresses into coordinates.
