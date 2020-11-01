@@ -1,8 +1,10 @@
 name: geocode
+version: 0.1.1
+homepage: https://github.com/imvalient/geocode
+repository: https://github.com/imvalient/geocode
 description: >-
     Package to make Geocode requests. It exposes two methods to translate
     coordinates into locations and addresses into coordinates.
-version: 0.1.0
 
 environment:
     sdk: ">=2.3.0 <3.0.0"
