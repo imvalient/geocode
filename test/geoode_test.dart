@@ -56,5 +56,18 @@ void main() {
         expect(e, isNull);
       }
     });
+
+    test(
+        'it should parse properly nullable values when requested a query returning an empty postal code',
+        () async {
+      try {
+        Address address = await geoCode.reverseGeocoding(
+            latitude: 40.20329, longitude: -6.79485);
+
+        expect(address.postal, isNull);
+      } catch (e) {
+        expect(e, isNull);
+      }
+    });
   });
 }
