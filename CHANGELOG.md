@@ -1,3 +1,6 @@
+# 0.1.3
+Fix: missing tryParse calls.
+
 # 0.1.2
 Fixed a bug, not properly handling responses when the field types did not match the expected ones.
 
