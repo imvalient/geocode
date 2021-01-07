@@ -1,11 +1,9 @@
-import 'dart:io';
-
 import 'package:test/test.dart';
 
 import '../lib/geocode.dart';
 
 void main() {
-  GeoCode geoCode = GeoCode(apiKey: Platform.environment["apiKey"]);
+  GeoCode geoCode = GeoCode();
 
   group('test geocode', () {
     test('it should return a valid city when requested valid lat & lng',
@@ -52,6 +50,19 @@ void main() {
 
         expect(coordinates.latitude, isNotNull);
         expect(coordinates.longitude, isNotNull);
+      } catch (e) {
+        expect(e, isNull);
+      }
+    });
+
+    test(
+        'it should parse properly nullable values when requested a query returning an empty postal code',
+        () async {
+      try {
+        Address address = await geoCode.reverseGeocoding(
+            latitude: 40.20329, longitude: -6.79485);
+
+        expect(address.postal, isNull);
       } catch (e) {
         expect(e, isNull);
       }

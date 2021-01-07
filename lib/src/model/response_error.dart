@@ -14,6 +14,7 @@ class ResponseError {
   factory ResponseError.fromJson(Map<String, dynamic> error) => ResponseError(
       code: error.containsKey('error') ? error['error']['code'] : null,
       message: error.containsKey('error')
+          // e006 error coode's key it's "message" instead of "description".
           ? ([e006].contains(error['error']['code']))
               ? error['error']['message']
               : error['error']['description']

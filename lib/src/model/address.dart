@@ -1,3 +1,5 @@
+import '../utils/try_parse.dart';
+
 class Address {
   /// The elevation in meters.
   double elevation;
@@ -47,17 +49,17 @@ class Address {
       this.distance});
 
   factory Address.fromJson(Map<String, dynamic> address) => Address(
-      elevation: double.parse(address['elevation']),
-      timezone: address['timezone'],
-      geoNumber: int.parse(address['geonumber']),
-      streetNumber: int.parse(address['stnumber']),
-      streetAddress: address['staddress'],
-      city: address['city'],
-      countryCode: address['prov'],
-      countryName: address['country'],
-      region: address['region'],
-      postal: address['postal'],
-      distance: double.parse(address['distance']));
+      elevation: double.tryParse(tryParse(address['elevation'])),
+      timezone: tryParse(address['timezone']),
+      geoNumber: int.tryParse(tryParse(address['geonumber'])),
+      streetNumber: int.tryParse(address['stnumber']),
+      streetAddress: tryParse(address['staddress']),
+      city: tryParse(address['city']),
+      countryCode: tryParse(address['prov']),
+      countryName: tryParse(address['country']),
+      region: tryParse(address['region']),
+      postal: tryParse(address['postal']),
+      distance: double.tryParse(address['distance']));
 
   @override
   String toString() =>
