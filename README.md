@@ -1,6 +1,9 @@
 # Geocode library
 
 ![workflow name](https://github.com/imvalient/geocode/workflows/Dart%20CI/badge.svg)
+[![likes](https://badges.bar/geocode/likes)](https://pub.dev/packages/geocode/score)
+[![popularity](https://badges.bar/geocode/popularity)](https://pub.dev/packages/geocode/score)
+[![pub points](https://badges.bar/geocode/pub%20points)](https://pub.dev/packages/geocode/score)
 
 ## Introduction
 
@@ -14,7 +17,7 @@ It's free for one request per second quota. Register in the above site to get an
 
 ```yaml
 dependecies:
-  geocode: ^0.1.1
+  geocode: ^0.1.2
 ```
 
 ## Example

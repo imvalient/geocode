@@ -52,14 +52,14 @@ class Address {
       elevation: double.tryParse(tryParse(address['elevation'])),
       timezone: tryParse(address['timezone']),
       geoNumber: int.tryParse(tryParse(address['geonumber'])),
-      streetNumber: int.tryParse(address['stnumber']),
+      streetNumber: int.tryParse(tryParse(address['stnumber'])),
       streetAddress: tryParse(address['staddress']),
       city: tryParse(address['city']),
       countryCode: tryParse(address['prov']),
       countryName: tryParse(address['country']),
       region: tryParse(address['region']),
       postal: tryParse(address['postal']),
-      distance: double.tryParse(address['distance']));
+      distance: double.tryParse(tryParse(address['distance'])));
 
   @override
   String toString() =>
