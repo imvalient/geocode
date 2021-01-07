@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 import '../lib/geocode.dart';
 
 void main() {
-  GeoCode geoCode = GeoCode(apiKey: Platform.environment["apiKey"]);
+  GeoCode geoCode = GeoCode(apiKey: Platform.environment["APIKEY"]);
 
   group('test geocode', () {
     test('it should return a valid city when requested valid lat & lng',
