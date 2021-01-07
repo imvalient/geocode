@@ -1,3 +1,6 @@
+# 1.0.0-nullsafety.0
+Null safety pre release.
+
 # 0.1.2
 Fixed a bug, not properly handling responses when the field types did not match the expected ones.
 

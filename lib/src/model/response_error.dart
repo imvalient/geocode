@@ -1,6 +1,6 @@
 class ResponseError {
-  final String code;
-  final String message;
+  final String? code;
+  final String? message;
 
   static const e002 = "002";
   static const e003 = "003";
