@@ -10,14 +10,12 @@ environment:
     sdk: ">=2.12.0-0 <3.0.0"
 
 dependencies:
-    http:
-        git:
-            url: https://github.com/dart-lang/http
-            ref: d473635f0dbb72936664696162127c2209986356 # Stable & tested master branch commit.
+  http: 0.13.0
 dev_dependencies:
-  test: ^1.16.0-nullsafety.4
+  test: 1.16.0
+  #test: ^1.16.0-nullsafety.4
 
-dependency_overrides:
-  http_parser: ^4.0.0-nullsafety
+#dependency_overrides:
+  #http_parser: ^4.0.0-nullsafety
   # Because pkg:test does not support pkg:http ^0.13.0
-  test: ^1.16.0-nullsafety.5
+  #test: ^1.16.0-nullsafety.5
