@@ -1,3 +1,6 @@
+# 1.0.1
+Address data object fixes
+
 # 1.0.0
 Null safety final support.
 

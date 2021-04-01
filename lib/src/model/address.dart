@@ -51,24 +51,15 @@ class Address {
   factory Address.fromJson(Map<String, dynamic> address) => Address(
       elevation: double.tryParse(tryParse(address['elevation']) ?? ''),
       timezone: tryParse(address['timezone']),
-<<<<<<< HEAD
-      geoNumber: int.tryParse(tryParse(address['geonumber'])),
-      streetNumber: int.tryParse(tryParse(address['stnumber'])),
-=======
       geoNumber: int.tryParse(tryParse(address['geonumber']) ?? ''),
       streetNumber: int.tryParse(tryParse(address['stnumber']) ?? ''),
->>>>>>> develop
       streetAddress: tryParse(address['staddress']),
       city: tryParse(address['city']),
       countryCode: tryParse(address['prov']),
       countryName: tryParse(address['country']),
       region: tryParse(address['region']),
       postal: tryParse(address['postal']),
-<<<<<<< HEAD
-      distance: double.tryParse(tryParse(address['distance'])));
-=======
       distance: double.tryParse(tryParse(address['distance']) ?? ''));
->>>>>>> develop
 
   @override
   String toString() =>
