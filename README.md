@@ -17,7 +17,7 @@ It's free for one request per second quota. Register in the above site to get an
 
 ```yaml
 dependecies:
-  geocode: 1.0.0
+  geocode: 1.0.1
 ```
 
 ## Example
