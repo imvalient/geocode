@@ -19,15 +19,17 @@ abstract class GeocodeClient {
 
 class GeocodeclientImpl implements GeocodeClient {
   /// API endpoint url.
-  final String url = 'https://geocode.xyz';
+  final String url = 'geocode.xyz';
 
   @override
   Future<Address> reverseGeocoding(
       double latitude, double longitude, String apiKey) {
-    String urlParams = "/$latitude,$longitude?json=1" +
-        (apiKey != '' ? '&auth=' + apiKey : '');
+    String urlParams =
+        "/$latitude,$longitude" + (apiKey != '' ? '&auth=' + apiKey : '');
 
-    return http.get(url + urlParams).then((response) {
+    final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
+
+    return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {
@@ -40,10 +42,12 @@ class GeocodeclientImpl implements GeocodeClient {
 
   @override
   Future<Coordinates> forwardGeocoding(String address, String apiKey) {
-    String urlParams = "/${address.replaceAll(' ', '+')}?json=1" +
+    String urlParams = "/${address.replaceAll(' ', '+')}" +
         (apiKey != '' ? '&auth=' + apiKey : '');
 
-    return http.get(url + urlParams).then((response) {
+    final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
+
+    return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {

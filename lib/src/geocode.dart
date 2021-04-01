@@ -11,7 +11,8 @@ class GeoCode {
   /// Resolves to an [Address] given a pair [latitude] and [longitude].
   ///
   /// Throws a [GeocodeException].
-  Future<Address> reverseGeocoding({double latitude, double longitude}) {
+  Future<Address> reverseGeocoding(
+      {required double latitude, required double longitude}) {
     return _client
         .reverseGeocoding(latitude, longitude, apiKey)
         .then((address) => address)
@@ -21,7 +22,7 @@ class GeoCode {
   /// Returns [Coordinates] from a given [address].
   ///
   /// Throws a [GeocodeException].
-  Future<Coordinates> forwardGeocoding({String address}) {
+  Future<Coordinates> forwardGeocoding({required String address}) {
     return _client
         .forwardGeocoding(address, apiKey)
         .then((coordinates) => coordinates)
