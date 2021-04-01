@@ -29,7 +29,7 @@ class GeocodeclientImpl implements GeocodeClient {
 
     final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
 
-    return http.get(/*url + urlParams*/ uri).then((response) {
+    return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {
@@ -47,7 +47,7 @@ class GeocodeclientImpl implements GeocodeClient {
 
     final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
 
-    return http.get(/*url + urlParams*/ uri).then((response) {
+    return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {
