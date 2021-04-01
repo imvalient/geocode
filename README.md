@@ -1,7 +1,5 @@
 # Geocode library
 
-## NULL SAFE ready!
-
 ![workflow name](https://github.com/imvalient/geocode/workflows/Dart%20CI/badge.svg)
 [![likes](https://badges.bar/geocode/likes)](https://pub.dev/packages/geocode/score)
 [![popularity](https://badges.bar/geocode/popularity)](https://pub.dev/packages/geocode/score)
@@ -19,7 +17,7 @@ It's free for one request per second quota. Register in the above site to get an
 
 ```yaml
 dependecies:
-  geocode: ^1.0.0-nullsafety.0
+  geocode: 1.0.0
 ```
 
 ## Example
@@ -108,7 +106,7 @@ Future<Coordinates> forwardGeocoding({String address})
 ## Dependencies
 
 ```yaml
-http: git@master
+http: ^0.13.1
 ```
 
 ## License
