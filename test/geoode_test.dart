@@ -26,7 +26,7 @@ void main() {
         await invalidGeoCode.reverseGeocoding(
             latitude: 40.20999, longitude: -6.79485);
       } catch (e) {
-        expect(e.code,
+        expect((e as GeocodeException).code,
             anyOf(equals(ResponseError.e003), equals(ResponseError.e006)));
       }
     });
@@ -37,7 +37,7 @@ void main() {
       try {
         await geoCode.reverseGeocoding(latitude: 1, longitude: 1);
       } catch (e) {
-        expect(e.code, equals(ResponseError.e008));
+        expect((e as GeocodeException).code, equals(ResponseError.e008));
       }
     });
 

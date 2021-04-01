@@ -1,3 +1,6 @@
+# 1.0.0
+Null safety final support.
+
 # 0.1.3
 Fix: missing tryParse calls.
 
