@@ -25,9 +25,9 @@ class GeocodeclientImpl implements GeocodeClient {
   Future<Address> reverseGeocoding(
       double latitude, double longitude, String apiKey) {
     String urlParams =
-        "/$latitude,$longitude" + (apiKey != '' ? '&auth=' + apiKey : '');
+        "/$latitude,$longitude" + (apiKey != '' ? '&auth=' + apiKey+'&geoit=json' : '');
 
-    final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
+    final Uri uri = Uri.https(url, urlParams, {});
 
     return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
