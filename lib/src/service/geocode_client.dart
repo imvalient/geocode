@@ -27,7 +27,15 @@ class GeocodeclientImpl implements GeocodeClient {
     String urlParams =
         "/$latitude,$longitude" + (apiKey != '' ? '&auth=' + apiKey : '');
 
-    final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
+    Map<String, dynamic> queryParams = {
+      'geoit': 'json',
+    };
+
+    if (apiKey != '') {
+      queryParams.addAll({'auth': apiKey});
+    }
+
+    final Uri uri = Uri.https(url, urlParams, queryParams);
 
     return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
@@ -42,10 +50,17 @@ class GeocodeclientImpl implements GeocodeClient {
 
   @override
   Future<Coordinates> forwardGeocoding(String address, String apiKey) {
-    String urlParams = "/${address.replaceAll(' ', '+')}" +
-        (apiKey != '' ? '&auth=' + apiKey : '');
+    String urlParams = "/${address.replaceAll(' ', '+')}";
 
-    final Uri uri = Uri.https(url, urlParams, {"geoit": "json"});
+    Map<String, dynamic> queryParams = {
+      'geoit': 'json',
+    };
+
+    if (apiKey != '') {
+      queryParams.addAll({'auth': apiKey});
+    }
+
+    final Uri uri = Uri.https(url, urlParams, queryParams);
 
     return http.get(uri).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
