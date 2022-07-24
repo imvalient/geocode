@@ -27,7 +27,7 @@ class GeocodeclientImpl implements GeocodeClient {
     String urlParams =
         "/$latitude,$longitude" + (apiKey != '' ? '&auth=' + apiKey : '');
 
-    Map<String, dynamic> queryParams = {
+    Map<String, String> queryParams = {
       'geoit': 'json',
     };
 
@@ -52,7 +52,7 @@ class GeocodeclientImpl implements GeocodeClient {
   Future<Coordinates> forwardGeocoding(String address, String apiKey) {
     String urlParams = "/${address.replaceAll(' ', '+')}";
 
-    Map<String, dynamic> queryParams = {
+    Map<String, String> queryParams = {
       'geoit': 'json',
     };
 

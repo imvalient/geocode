@@ -1,3 +1,6 @@
+# 1.0.2
+Fixed malformed query parameters
+
 # 1.0.1
 Address data object fixes
 

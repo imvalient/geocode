@@ -3,8 +3,7 @@ import 'package:test/test.dart';
 import '../lib/geocode.dart';
 
 void main() {
-  // THIS IS AN PUBLIC API KEY AND JUST FOR TESTING PURPOSES
-  GeoCode geoCode = GeoCode(apiKey:'254964637064265319091x56863');
+  GeoCode geoCode = GeoCode();
 
   group('test geocode', () {
     test('it should return a valid city when requested valid lat & lng',
