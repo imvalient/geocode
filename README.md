@@ -17,7 +17,7 @@ It's free for one request per second quota. Register in the above site to get an
 
 ```yaml
 dependecies:
-  geocode: 1.0.1
+  geocode: 1.0.2
 ```
 
 ## Example
@@ -106,7 +106,7 @@ Future<Coordinates> forwardGeocoding({String address})
 ## Dependencies
 
 ```yaml
-http: ^0.13.1
+http: ^0.13.4
 ```
 
 ## License
