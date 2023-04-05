@@ -37,7 +37,7 @@ class GeocodeclientImpl implements GeocodeClient {
 
     final Uri uri = Uri.https(url, urlParams, queryParams);
 
-    return http.get(uri).then((response) {
+    return http.get(uri, headers: {'User-Agent': 'geocode (dart:io)'}).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {
@@ -62,7 +62,7 @@ class GeocodeclientImpl implements GeocodeClient {
 
     final Uri uri = Uri.https(url, urlParams, queryParams);
 
-    return http.get(uri).then((response) {
+    return http.get(uri, headers: {'User-Agent': 'geocode (dart:io)'}).then((response) {
       ResponseError err = ResponseError.fromJson(json.decode(response.body));
 
       if (err.code != null) {
