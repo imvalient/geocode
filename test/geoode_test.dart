@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:test/test.dart';
 
 import '../lib/geocode.dart';
@@ -8,6 +10,7 @@ void main() {
   group('test geocode', () {
     test('it should return a valid city when requested valid lat & lng',
         () async {
+      sleep(Duration(seconds: 2));
       try {
         Address address = await geoCode.reverseGeocoding(
             latitude: 40.20999, longitude: -6.79485);
@@ -21,6 +24,7 @@ void main() {
     test(
         'it should return an auth token exception if an invalid token is supplied',
         () async {
+      sleep(Duration(seconds: 2));
       GeoCode invalidGeoCode = GeoCode(apiKey: "-1");
       try {
         await invalidGeoCode.reverseGeocoding(
@@ -34,6 +38,7 @@ void main() {
     test(
         'it should return an invalid query exception if wrong coordinates are supplied',
         () async {
+      sleep(Duration(seconds: 2));
       try {
         await geoCode.reverseGeocoding(latitude: 1, longitude: 1);
       } catch (e) {
@@ -44,6 +49,7 @@ void main() {
     test(
         'it should return valid coordinates when requested an existing location',
         () async {
+      sleep(Duration(seconds: 2));
       try {
         Coordinates coordinates = await geoCode.forwardGeocoding(
             address: "chinese theatre, los angeles");
@@ -56,13 +62,14 @@ void main() {
     });
 
     test(
-        'it should parse properly nullable values when requested a query returning an empty postal code',
+        'it should parse properly values when requested a query returning a postal code',
         () async {
+      sleep(Duration(seconds: 2));
       try {
         Address address = await geoCode.reverseGeocoding(
             latitude: 40.20329, longitude: -6.79485);
 
-        expect(address.postal, isNull);
+        expect(address.postal, isNotNull);
       } catch (e) {
         expect(e, isNull);
       }

@@ -1,3 +1,6 @@
+# 1.0.3
+Prevent adding apiKey twice and add custom user-agent header - Arne K. Haaje
+
 # 1.0.2
 Fixed malformed query parameters
 

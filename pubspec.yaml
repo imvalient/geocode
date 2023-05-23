@@ -1,5 +1,5 @@
 name: geocode
-version: 1.0.2
+version: 1.0.3
 homepage: https://github.com/imvalient/geocode
 repository: https://github.com/imvalient/geocode
 description: >-
@@ -7,9 +7,9 @@ description: >-
     coordinates into locations and addresses into coordinates.
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.12.0 <4.0.0"
 
 dependencies:
-  http: ^0.13.4
+  http: '>=0.13.0 <2.0.0'
 dev_dependencies:
   test: ^1.21.4
